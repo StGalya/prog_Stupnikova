@@ -75,5 +75,6 @@ freeze = False
 
 root.after(10, time_handler)
 speed_scale.bind("<Motion>", unfreezer)
+
 root.mainloop()
 
