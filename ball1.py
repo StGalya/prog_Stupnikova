@@ -33,5 +33,4 @@ canv.pack(fill=BOTH, expand=1)
 
 root.after_idle(tick)
 root.bind('<Button-1>', click)
-
 root.mainloop()
