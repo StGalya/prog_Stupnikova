@@ -10,7 +10,7 @@ class Hero(Attacker):
         self.name = name
     def attack(self, target):
         target._health -= self._attack
-        print(target._color, 'дракон', target._health, '/', target._healthfull, 'HP')
+        print(target._color, target._health, '/', target._healthfull, 'HP')
         
 
     
