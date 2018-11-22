@@ -1,7 +1,6 @@
 from tkinter import *
 from random import randrange as rnd, choice
 import random
-import time
 color = ['red', 'green', 'yellow', 'blue', 'black', 'pink']
 
 root = Tk()
@@ -26,7 +25,6 @@ def tick_handler():
     global balls
     for i in range(len(balls)):
         x, y, r, dx, dy, ovall = balls[i]
-        print("Тик!")
         if x < 0:
             dx = -dx
             x = 0
@@ -49,7 +47,7 @@ def time_handler():
     global freeze
     speed = speed_scale.get()
     if speed == 0:
-        print("Заморозка!")
+
         freeze = True
         return
     tick_handler()
@@ -77,4 +75,3 @@ root.after(10, time_handler)
 speed_scale.bind("<Motion>", unfreezer)
 
 root.mainloop()
-
