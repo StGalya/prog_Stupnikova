@@ -9,9 +9,9 @@ def check_simplicity(x):
         if x % i == 0:
             check += 1
     if check < 3 and x !=9 and x!=4:
-        return(True)
+        return('да')
     else:
-        return(False)   
+        return('нет')   
         
 def check_number(x):
     check = 0
@@ -20,6 +20,7 @@ def check_number(x):
         if x % i == 0:
             check += 1
             list.append(i) 
+    list.append(x)
     return(list)    
 
 class Enemy(Attacker):
@@ -91,7 +92,7 @@ class SuperCleverTroll(Troll):
         
     def question(self):
         x = randint(1,100)
-        self.__quest = 'Перечисли множители числа ' + str(x) + ' по порядку!'
+        self.__quest = 'Перечисли делители числа ' + str(x) + ' по порядку!'
         self.set_answer(check_number(x))
         return self.__quest
 

@@ -3,13 +3,21 @@
 from enemies import *
 from hero import *
 
+
+def cheat(x):
+    if x == 'Jopkins':
+        start_game_plus()
+    else:
+        pass
+
+
 def annoying_input_int(message =''):
     answer = None
     while answer == None:
         try:
             answer = int(input(message))
         except ValueError:
-            print('Вы ввели недопустимые символы')
+            answer = input(message)
     return answer
 
 def troll_tournament(hero, troll_list):
@@ -73,7 +81,21 @@ def game_tournament(hero, dragon_list):
             if input() == 'да':
                 start_game()
 
+def start_game_plus():
 
+    try:
+        
+        print('вы ввели чит код, представтесь')
+        hero = Hero(input())
+        troll_number = 3
+        troll_list = generate_troll_list(troll_number)
+        assert(len(troll_list) == 3)
+        print('У Вас на пути', troll_number, 'троллей!')
+        troll_tournament(hero, troll_list)
+
+
+    except EOFError:
+        print('Поток ввода закончился. Извините, принимать ответы более невозможно.')
 
 def start_game():
 
@@ -81,6 +103,7 @@ def start_game():
         print('Добро пожаловать в арифметико-ролевую игру с драконами и не только!')
         print('Представьтесь, пожалуйста: ', end = '')
         hero = Hero(input())
+        cheat(hero.name)
         troll_number = 3
         troll_list = generate_troll_list(troll_number)
         dragon_number = 3
@@ -89,8 +112,8 @@ def start_game():
         print('У Вас на пути', dragon_number, 'драконов!')
         game_tournament(hero, dragon_list)
         assert(len(troll_list) == 3)
-        print('У Вас на пути', dragon_number, 'троллей!')
-        game_tournament(hero, troll_list)
+        print('У Вас на пути', troll_number, 'троллей!')
+        troll_tournament(hero, troll_list)
 
 
     except EOFError:
