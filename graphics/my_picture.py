@@ -15,33 +15,32 @@ def draw_face_left():
     face_left_guy.setFill('yellow')
 
 
+def draw_circle(x, y, r, col):
+    obj = gr.Circle(gr.Point(x, y), r)
+    obj.setFill(col)
+    obj.draw(window)
+    
+    
+def draw_line(x1, y1, x2, y2):
+    obj = gr.Line(gr.Point(x1, y1), gr.Point(x2, y2))
+    obj.draw(window)
+    
+    
 def draw_eye_face_left():
-    eye_left_guy = gr.Circle(gr.Point(180, 235), 10)
-    eye_left_guy.draw(window)
-    eye_left_guy.setFill('forestgreen')
-    eye_right_guy = gr.Circle(gr.Point(220, 235), 10)
-    eye_right_guy.draw(window)
-    eye_right_guy.setFill('forestgreen')
-    apple_of_left_eye_guy = gr.Circle(gr.Point(180, 235), 3)
-    apple_of_left_eye_guy.draw(window)
-    apple_of_left_eye_guy.setFill('black')
-    apple_of_right_eye_guy = gr.Circle(gr.Point(220, 235), 3)
-    apple_of_right_eye_guy.draw(window)
-    apple_of_right_eye_guy.setFill('black')
-
+    draw_circle(180, 235, 10, 'forestgreen') 
+    draw_circle(220, 235, 10, 'forestgreen')
+    draw_circle(180, 235, 3, 'black')
+    draw_circle(220, 235, 3, 'black')
+    
 
 def draw_leg_face_left():
-    leg_left_guy = gr.Line(gr.Point(180, 295), gr.Point(170, 320))
-    leg_left_guy.draw(window)
-    leg_right_guy = gr.Line(gr.Point(220, 295), gr.Point(230, 320))
-    leg_right_guy.draw(window)
+    draw_line(180, 295, 170, 320)
+    draw_line(220, 295, 230, 320)
 
 
 def draw_arm_face_left():
-    arm_left_guy = gr.Line(gr.Point(154, 265), gr.Point(143, 290))
-    arm_left_guy.draw(window)
-    arm_right_guy = gr.Line(gr.Point(246, 265), gr.Point(257, 290))
-    arm_right_guy.draw(window)
+    draw_line(154, 265, 143, 290)
+    draw_line(246, 265, 257, 290)
 
 
 def draw_face_right():
@@ -51,84 +50,48 @@ def draw_face_right():
 
 
 def draw_eye_face_right():
-    eyelr = gr.Circle(gr.Point(300, 235), 10)
-    eyelr.draw(window)
-    eyelr.setFill('mediumturquoise')
-    eyerr = gr.Circle(gr.Point(340, 235), 10)
-    eyerr.draw(window)
-    eyerr.setFill('mediumturquoise')
-    eyezlr = gr.Circle(gr.Point(300, 235), 3)
-    eyezlr.draw(window)
-    eyezlr.setFill('black')
-    eyezrr = gr.Circle(gr.Point(340, 235), 3)
-    eyezrr.draw(window)
-    eyezrr.setFill('black')
+    draw_circle(300, 235, 10, 'mediumturquoise')
+    draw_circle(340, 235, 10, 'mediumturquoise')
+    draw_circle(300, 235, 3, 'black')
+    draw_circle(340, 235, 3, 'black')    
 
 
 def draw_leg_face_right():
-    leg_left_girl = gr.Line(gr.Point(300, 295), gr.Point(290, 320))
-    leg_left_girl.draw(window)
-    leg_right_girl = gr.Line(gr.Point(340, 295), gr.Point(350, 320))
-    leg_right_girl.draw(window)
+    draw_line(300, 295, 290, 320)
+    draw_line(340, 295, 350, 320)
 
 
 def draw_arm_face_right():
-    arm_left_girl = gr.Line(gr.Point(274, 265), gr.Point(257, 290))
-    arm_left_girl.draw(window)
-    leg_right_girl = gr.Line(gr.Point(366, 265), gr.Point(386, 290))
-    leg_right_girl.draw(window)
+    draw_line(274, 265, 257, 290)
+    draw_line(366, 265, 386, 290)
 
 
 def draw_mouths():
-    mth1 = gr.Line(gr.Point(173, 262), gr.Point(185, 272))
-    mth1.draw(window)
-    mth2 = gr.Line(gr.Point(340, 262), gr.Point(330, 272))
-    mth2.draw(window)
+    draw_line(173, 262, 185, 272)
+    draw_line(340, 262, 330, 272)
 
 
 def draw_cloud(x, y, r):
-    ob = gr.Circle(gr.Point(x, y), r)
-    ob.draw(window)
-    ob.setFill('skyblue')
-    ob = gr.Circle(gr.Point(x-24, y), r+1)
-    ob.draw(window)
-    ob.setFill('skyblue')
-    ob = gr.Circle(gr.Point(x-29, y-4), r-2)
-    ob.draw(window)
-    ob.setFill('skyblue')
-    ob = gr.Circle(gr.Point(x-14, y-6), r+3)
-    ob.draw(window)
-    ob.setFill('skyblue')
-    ob = gr.Circle(gr.Point(x-14, y-6), r+2)
-    ob.draw(window)
-    ob.setFill('skyblue')
-    ob = gr.Circle(gr.Point(x-4, y-4), r)
-    ob.draw(window)
-    ob.setFill('skyblue')
+    draw_circle(x, y, r, 'skyblue')  
+    draw_circle(x - 24, y, r + 1, 'skyblue')
+    draw_circle(x - 29, y - 4, r - 2, 'skyblue')  
+    draw_circle(x - 14, y - 6, r + 3, 'skyblue')
+    draw_circle(x - 14, y - 6, r + 2, 'skyblue')
+    draw_circle(x - 4, y - 4, r, 'skyblue')
+
+
 skam = gr.Rectangle(gr.Point(130, 170), gr.Point(390, 200))
 skam.draw(window)
 skam.setFill('sienna')
 
 
 def draw_flower():
-    fl = gr.Circle(gr.Point(101, 320), 15)
-    fl.draw(window)
-    fl.setFill('magenta')
-    fl = gr.Circle(gr.Point(128, 325), 15)
-    fl.draw(window)
-    fl.setFill('magenta')
-    fl = gr.Circle(gr.Point(133, 353), 15)
-    fl.draw(window)
-    fl.setFill('magenta')
-    fl = gr.Circle(gr.Point(108, 368), 15)
-    fl.draw(window)
-    fl.setFill('magenta')
-    fl = gr.Circle(gr.Point(88, 346), 15)
-    fl.draw(window)
-    fl.setFill('magenta')
-    fl = gr.Circle(gr.Point(112, 342), 20)
-    fl.draw(window)
-    fl.setFill('deeppink')
+    draw_circle(101, 320, 15, 'magenta')
+    draw_circle(128, 325, 15, 'magenta')    
+    draw_circle(133, 353, 15, 'magenta')
+    draw_circle(108, 368, 15, 'magenta')
+    draw_circle(88, 346, 15, 'magenta')
+    draw_circle(112, 342, 20, 'deeppink')
 
 
 def draw_picture():
@@ -146,6 +109,8 @@ def draw_picture():
     draw_cloud(119, 80, 20)
     draw_cloud(249, 40, 20)
     draw_cloud(399, 110, 20)
+
+
 draw_picture()
 
 window.getMouse()
