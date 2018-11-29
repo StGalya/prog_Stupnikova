@@ -1,6 +1,7 @@
 import math
 from tkinter import *
-
+from random import randrange as rnd, choice
+import time
 
 g = 9.8  # Ускорение свободного падения для снаряда.
 
@@ -181,19 +182,3 @@ cannon = Cannon(70, 550, canv)
 
 tick()
 root.mainloop()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
