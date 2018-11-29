@@ -7,27 +7,28 @@ color = ['red', 'green', 'yellow', 'blue', 'black', 'pink']
 
 
 def tick():
-    global xx, yy, r, counter
+    global x_centre_ball, y_centre_ball, r_ball, counter
     root.after(1000, tick)
     canv.delete(ALL)
-    xx = random.randint(100, 700)
-    yy = random.randint(100, 500)
-    r = random.randint(20, 100)
-    canv.create_oval(xx-r, yy-r, xx+r, yy+r, fill=choice(color))
+    x_centre_ball = random.randint(100, 700)
+    y_centre_ball = random.randint(100, 500)
+    r_ball = random.randint(20, 100)
+    canv.create_oval(x_centre_ball-r_ball, y_centre_ball-r_ball, x_centre_ball+r_ball, 
+                     y_centre_ball+r_ball, fill=choice(color))
     canv.create_text(150, 50, text="Попадания: " + str(counter),
                      font='Arial 20')
 
 
 def click(event):
-    global xx, yy
+    global x_centre_ball, y_centre_ball
     xc = event.x
     yc = event.y
     global counter
-    if (xx-xc)**2+(yy-yc)**2 < r**2:
+    if (x_centre_ball-xc)**2+(y_centre_ball-yc)**2 < r_ball**2:
         counter += 1
         canv.delete(ALL)
-        xx = 1000
-        yy = 1000
+        x_centre_ball = 1000
+        y_centre_ball = 1000
         canv.create_text(150, 50,
         text="Попадания: " + str(counter), font='Arial 20')         
 root = Tk()
