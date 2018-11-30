@@ -1,11 +1,12 @@
 from tkinter import *
-from random import randrange as rnd, choice
+
 import random
 import time
 
 counter = 0
 color = ['red', 'green', 'yellow', 'blue', 'black', 'pink']
 
+    
 
 def tick():
     global x_centre_ball, y_centre_ball, r_ball, counter
@@ -16,7 +17,7 @@ def tick():
     r_ball = random.randint(20, 100)
     canv.create_oval(x_centre_ball - r_ball, y_centre_ball - r_ball,
                      x_centre_ball + r_ball,
-                     y_centre_ball + r_ball, fill=choice(color))
+                     y_centre_ball + r_ball, fill=random.choice(color))
     canv.create_text(150, 50, text="Попадания: " + str(counter),
                      font='Arial 20')
 
