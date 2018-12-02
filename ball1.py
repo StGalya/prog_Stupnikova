@@ -1,12 +1,10 @@
 from tkinter import *
-
 import random
 import time
 
 counter = 0
 color = ['red', 'green', 'yellow', 'blue', 'black', 'pink']
 
-    
 
 def tick():
     global x_centre_ball, y_centre_ball, r_ball, counter
