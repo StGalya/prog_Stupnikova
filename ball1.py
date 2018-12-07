@@ -1,6 +1,5 @@
 from tkinter import *
 import random
-import time
 
 counter = 0
 color = ['red', 'green', 'yellow', 'blue', 'black', 'pink']
